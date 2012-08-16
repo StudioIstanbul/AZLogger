@@ -10,11 +10,17 @@
 #import "UKNibOwner.h"
 
 
+
 @interface AZLogger : UKNibOwner {
 	NSMutableArray*		logs;
 	NSURL*              remoteUrl;
 	IBOutlet NSArrayController*	arrayViewController;
-	IBOutlet NSWindow* window;
+	IBOutlet NSWindow* azwindow;
+    IBOutlet NSPanel* statusPanel;
+    IBOutlet NSPanel* confirmPanel;
+    IBOutlet NSTextField* idField;
+    IBOutlet NSProgressIndicator* prog;
+    IBOutlet NSTextField* eMailField;
 }
 
 -(AZLogger*)init;
@@ -26,5 +32,5 @@
 -(NSWindow*)logWindow;
 -(IBAction)sendLogToServer:(id)sender;
 -(IBAction)closeWindow:(id)sender;
-
+-(IBAction)closePanel:(id)sender;
 @end

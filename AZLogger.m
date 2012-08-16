@@ -7,7 +7,9 @@
 //
 
 #import "AZLogger.h"
-
+#import "UKSystemInfo.m"
+#import "ASIHTTPRequest/ASIHTTPRequest.h"
+#import "ASIHTTPRequest/ASIFormDataRequest.h"
 
 @implementation AZLogger
 
@@ -15,8 +17,10 @@
 	[super init];
 	[arrayViewController removeObjectAtArrangedObjectIndex:0];
 	logs = [[NSMutableArray alloc]init];
-	[logs addObject:[NSString stringWithFormat:@"%@: started logging.", [[NSDate date] description]]];
-	[arrayViewController addObject:[NSString stringWithFormat:@"%@: started logging.", [[NSDate date] description]]];
+    NSString* systemInfo = UKSystemVersionString();
+    [self log:[NSString stringWithFormat:@"Product: %@ - version %@", [[NSBundle mainBundle] bundleIdentifier], [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleVersion"]]];
+    [self log:[NSString stringWithFormat:@"System Information: Operating System %@ | Model %@ %u cores | CPU %@ | RAM %u", systemInfo, UKMachineName(),UKCountCores(), UKCPUName(),UKPhysicalRAMSize()]];
+	[self log:@"started logging."];
 	return self;
 }
 
@@ -24,6 +28,14 @@
     [self init];
     remoteUrl = url;
     return self;
+}
+
+-(void)setURL:(NSURL*)url {
+    remoteUrl = url;
+}
+
+-(IBAction)closeWindow:(id)sender {
+    [azwindow orderOut:self];
 }
 
 -(void)log:(NSString *)stringToLog {
@@ -37,12 +49,57 @@
 	}
 }
 
+-(IBAction)sendLogToServer:(id)sender {
+    [NSApp beginSheet:statusPanel modalForWindow:azwindow modalDelegate:self didEndSelector:NULL contextInfo:nil];
+    //[NSApp runModalForWindow:statusPanel];
+    ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:remoteUrl];
+    [request setDelegate:self];
+    [request addPostValue:@"new" forKey:@"cmd"];
+    NSString* logContent = @"";
+    for (NSString* elem in logs) {
+        logContent = [logContent stringByAppendingString:[NSString stringWithFormat:@"%@::",elem]];
+    }
+    [request setPostValue:logContent forKey:@"logfile"];
+    //NSLog(@"%@", logContent);
+    [request setPostValue:[eMailField stringValue] forKey:@"email"];
+    [request setRequestMethod:@"POST"];
+    [request setUploadProgressDelegate:prog];
+    //[request setRequestFinishSelector:@selector(finishedUpload)];
+    [request startAsynchronous];
+}
+-(void)requestFinished:(ASIHTTPRequest*) request {
+    [NSApp stopModal];
+    [NSApp endSheet:statusPanel];
+    [statusPanel orderOut:self];
+    NSString* trackingId = [request responseString];
+    NSLog(@"tracking id %@", trackingId);
+    //[logs removeAllObjects];
+    [idField setStringValue:trackingId];
+    [NSApp beginSheet:confirmPanel modalForWindow:azwindow modalDelegate:self didEndSelector:nil contextInfo:nil];
+    //[NSApp runModalForWindow:confirmPanel];
+}
+
+-(IBAction)closePanel:(id)sender {
+    [confirmPanel orderOut:self];
+    [NSApp endSheet:confirmPanel];
+    [NSApp stopModal];
+    [azwindow orderOut:self];
+    [NSApp stopModal];
+}
+
+-(void)requestFailed:(ASIHTTPRequest*)request {
+    NSLog(@"could not connect to server %@", [[request error] description]);
+    [statusPanel orderOut:self];
+    NSAlert* alert = [NSAlert alertWithError:[request error]];
+    [alert beginSheetModalForWindow:azwindow modalDelegate:self didEndSelector:nil contextInfo:nil];
+}
+
 -(void)askForSendingLogModalForWindow:(NSWindow*)window {
 	
 }
 
 -(NSWindow*)logWindow {
-	return window;
+	return azwindow;
 }
 
 @end
