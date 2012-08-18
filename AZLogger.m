@@ -62,6 +62,9 @@
     [request setPostValue:logContent forKey:@"logfile"];
     //NSLog(@"%@", logContent);
     [request setPostValue:[eMailField stringValue] forKey:@"email"];
+    [request setPostValue:[[NSBundle mainBundle] bundleIdentifier] forKey:@"product"];
+    [request setPostValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"version"];
+    [request setPostValue:UKSystemVersionString() forKey:@"osversion"];
     [request setRequestMethod:@"POST"];
     [request setUploadProgressDelegate:prog];
     //[request setRequestFinishSelector:@selector(finishedUpload)];
@@ -89,6 +92,8 @@
 
 -(void)requestFailed:(ASIHTTPRequest*)request {
     NSLog(@"could not connect to server %@", [[request error] description]);
+    [NSApp stopModal];
+    [NSApp endSheet:statusPanel];
     [statusPanel orderOut:self];
     NSAlert* alert = [NSAlert alertWithError:[request error]];
     [alert beginSheetModalForWindow:azwindow modalDelegate:self didEndSelector:nil contextInfo:nil];
