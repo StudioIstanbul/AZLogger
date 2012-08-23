@@ -78,6 +78,8 @@
     NSLog(@"tracking id %@", trackingId);
     //[logs removeAllObjects];
     [idField setStringValue:trackingId];
+    int statusCode = [request responseStatusCode];
+    NSLog(@"server status %i", statusCode);
     [NSApp beginSheet:confirmPanel modalForWindow:azwindow modalDelegate:self didEndSelector:nil contextInfo:nil];
     //[NSApp runModalForWindow:confirmPanel];
 }
