@@ -20,7 +20,7 @@ Usage
 
 Init
 
-AZLogger *logger = [[AZLogger alloc] initWithUrl:[NSURL URLWithString:@"http://myserver.com/cgi-bin/script.cgi"]];
+AZLogger *logger = [[AZLogger alloc] initWithURL:[NSURL URLWithString:@"http://myserver.com/cgi-bin/script.cgi"]];
 
 Log something
 
