@@ -19,13 +19,17 @@ Usage
 =====
 
 Init
+
 AZLogger *logger = [[AZLogger alloc] initWithUrl:[NSURL URLWithString:@"http://myserver.com/cgi-bin/script.cgi"]];
 
 Log something
+
 [logger log:@"something"];
 
 Request to send to server
+
 [[logger logWindow] orderFront:self];
+
 (or do something else with this window...)
 
 Class Interface
