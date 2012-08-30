@@ -4,6 +4,12 @@
 //
 //  Created by Andreas Zöllner on 8/14/12.
 //  Copyright 2012 Studio Istanbul. All rights reserved.
+//  This class is open source, please feel free to modify and use it
+//  in your commercial and non-commercial projects, but please include
+//  a short notice about this in your applications about box or documentation.
+//
+//  please also recognize the license agreements of the 3rd party modules
+//  included (ASIHTTPRequest, UKNibowner, UKSysteminfo)
 //
 
 #import <Cocoa/Cocoa.h>
@@ -23,13 +29,29 @@
     IBOutlet NSTextField* eMailField;
 }
 
+// old init method, depreciated, use initWithURL instead!
 -(AZLogger*)init;
+
+// init a new logger object, URL must reply with just ticket ID
 -(AZLogger*)initWithURL:(NSURL*)url;
+
+// log a string
 -(void)log:(NSString*)stringToLog;
+
+// output the whole log to system log
 -(void)printLogToNSLog;
+
+// for future use - not implemented yet!
 -(void)askForSendingLogModalForWindow:(NSWindow*)window;
+
+// set URL for log transfer
 -(void)setURL:(NSURL*)url;
+
+// access the Object's window and ask for sending the log.
+// you can also use this window as sheet
 -(NSWindow*)logWindow;
+
+// methods for interface, do not use them directly
 -(IBAction)sendLogToServer:(id)sender;
 -(IBAction)closeWindow:(id)sender;
 -(IBAction)closePanel:(id)sender;
