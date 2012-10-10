@@ -34,6 +34,7 @@
 
 -(id)	init
 {
+    //NSLog(@"init");
 	if( (self = [super init]) )
 	{
 		topLevelObjects = [[NSMutableArray alloc] init];
@@ -42,6 +43,7 @@
 									topLevelObjects, @"NSTopLevelObjects",
 									nil];
 		NSBundle*		mainB = [NSBundle mainBundle];
+        //NSLog(@"load nib %@", NSStringFromClass([self class]),[self nibFilename]);
 		[mainB loadNibFile: [self nibFilename]
 							externalNameTable: ent withZone: [self zone]];	// We're responsible for releasing the top-level objects in the NIB (our view, right now).
 		if( [topLevelObjects count] == 0 )
