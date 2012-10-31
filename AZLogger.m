@@ -27,11 +27,14 @@
 - (AZLogger*)initWithURL:(NSURL*)url {
     [self init];
     remoteUrl = url;
+    [remoteUrl retain];
     return self;
 }
 
 -(void)setURL:(NSURL*)url {
+    if (remoteUrl) [remoteUrl release];
     remoteUrl = url;
+    [remoteUrl retain];
 }
 
 -(IBAction)closeWindow:(id)sender {
@@ -52,6 +55,7 @@
 -(IBAction)sendLogToServer:(id)sender {
     [NSApp beginSheet:statusPanel modalForWindow:azwindow modalDelegate:self didEndSelector:NULL contextInfo:nil];
     //[NSApp runModalForWindow:statusPanel];
+    NSLog(@"sending to %@", [remoteUrl description]);
     ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:remoteUrl];
     [request setDelegate:self];
     [request addPostValue:@"new" forKey:@"cmd"];
