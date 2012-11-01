@@ -14,7 +14,7 @@
 @implementation AZLogger
 
 -(AZLogger*)init {
-	[super init];
+	self = [super init];
 	[arrayViewController removeObjectAtArrangedObjectIndex:0];
 	logs = [[NSMutableArray alloc]init];
     NSString* systemInfo = UKSystemVersionString();
@@ -25,7 +25,7 @@
 }
 
 - (AZLogger*)initWithURL:(NSURL*)url {
-    [self init];
+    self = [self init];
     remoteUrl = url;
     [remoteUrl retain];
     return self;
