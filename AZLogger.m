@@ -17,9 +17,12 @@
 	self = [super init];
 	[arrayViewController removeObjectAtArrangedObjectIndex:0];
 	logs = [[NSMutableArray alloc]init];
-    NSString* systemInfo = UKSystemVersionString();
+    NSString* systemInfo = [NSString stringWithString:UKSystemVersionString()];
     [self log:[NSString stringWithFormat:@"Product: %@ - version %@", [[NSBundle mainBundle] bundleIdentifier], [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleVersion"]]];
     [self log:[NSString stringWithFormat:@"System Information: Operating System %@ | Model %@ %u cores | CPU %@ | RAM %u", systemInfo, UKMachineName(),UKCountCores(), UKCPUName(),UKPhysicalRAMSize()]];
+#ifdef NON_APPSTORE
+    //[systemInfo release];
+#endif
 	[self log:@"started logging."];
 	return self;
 }

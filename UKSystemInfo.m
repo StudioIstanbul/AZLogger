@@ -192,12 +192,16 @@ NSString*	UKMachineName()
 		
 		// If it was a generic name, include the ugly name so we can add it to the list:
 		if( [foundKey rangeOfString: @","].location == NSNotFound )
-			humanReadableName = [[NSString stringWithFormat: @"%@ (%@)", humanReadableName, foundKey] retain];
+			//humanReadableName = [[NSString stringWithFormat: @"%@ (%@)", humanReadableName, foundKey] retain];
+            humanReadableName = [NSString stringWithFormat: @"%@ (%@)", humanReadableName, foundKey];
 		// If nothing was found, at least show the ugly name so we have some hint:
 		if( humanReadableName == nil )
-			cpuName = [[NSString stringWithFormat: @"Unknown (%@)", internalName] retain];
+			//cpuName = [[NSString stringWithFormat: @"Unknown (%@)", internalName] retain];
+            cpuName = [NSString stringWithFormat: @"Unknown (%@)", internalName];
 		else
 			cpuName = humanReadableName;
+        
+        [translationDictionary release];
 	}
 	
 	return cpuName;
