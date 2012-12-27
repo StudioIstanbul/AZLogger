@@ -27,7 +27,11 @@
     IBOutlet NSTextField* idField;
     IBOutlet NSProgressIndicator* prog;
     IBOutlet NSTextField* eMailField;
+    BOOL crashLog;
 }
+
+// enable writing of logfile to disk for crashlogs, default NO
+@property (assign) BOOL crashLog;
 
 // old init method, depreciated, use initWithURL instead!
 -(AZLogger*)init;

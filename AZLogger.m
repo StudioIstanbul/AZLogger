@@ -10,20 +10,33 @@
 #import "UKSystemInfo.m"
 #import "ASIHTTPRequest/ASIHTTPRequest.h"
 #import "ASIHTTPRequest/ASIFormDataRequest.h"
+#import "NSFileManager+DirectoryLocations.h"
 
 @implementation AZLogger
+
+@synthesize crashLog;
 
 -(AZLogger*)init {
 	self = [super init];
 	[arrayViewController removeObjectAtArrangedObjectIndex:0];
-	logs = [[NSMutableArray alloc]init];
-    NSString* systemInfo = [NSString stringWithString:UKSystemVersionString()];
-    [self log:[NSString stringWithFormat:@"Product: %@ - version %@", [[NSBundle mainBundle] bundleIdentifier], [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleVersion"]]];
-    [self log:[NSString stringWithFormat:@"System Information: Operating System %@ | Model %@ %u cores | CPU %@ | RAM %u", systemInfo, UKMachineName(),UKCountCores(), UKCPUName(),UKPhysicalRAMSize()]];
+    self.crashLog = NO;
 #ifdef NON_APPSTORE
     //[systemInfo release];
 #endif
-	[self log:@"started logging."];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[[[NSFileManager defaultManager] applicationSupportDirectory] stringByAppendingPathComponent:@"logfile.data"]] == YES) {
+        NSLog(@"found crash log!");
+        logs = [NSMutableArray arrayWithContentsOfFile:[[[NSFileManager defaultManager] applicationSupportDirectory] stringByAppendingPathComponent:@"logfile.data"]];
+        [logs retain];
+        [arrayViewController setContent:logs];
+        [self.logWindow makeKeyAndOrderFront:self];
+    } else {
+        logs = [[NSMutableArray alloc]init];
+        [arrayViewController setContent:logs];
+        NSString* systemInfo = [NSString stringWithString:UKSystemVersionString()];
+        [self log:[NSString stringWithFormat:@"Product: %@ - version %@", [[NSBundle mainBundle] bundleIdentifier], [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleVersion"]]];
+        [self log:[NSString stringWithFormat:@"System Information: Operating System %@ | Model %@ %u cores | CPU %@ | RAM %u", systemInfo, UKMachineName(),UKCountCores(), UKCPUName(),UKPhysicalRAMSize()]];
+        [self log:@"started logging."];
+    }
 	return self;
 }
 
@@ -46,7 +59,11 @@
 
 -(void)log:(NSString *)stringToLog {
 	[logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], stringToLog]];
-	[arrayViewController addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], stringToLog]];
+    [arrayViewController rearrangeObjects];
+	//[arrayViewController addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], stringToLog]];
+    if (crashLog == YES) {
+        [logs writeToURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] atomically:NO];
+    }
 }
 
 -(void)printLogToNSLog {
@@ -114,6 +131,14 @@
 
 -(NSWindow*)logWindow {
 	return azwindow;
+}
+
+-(void)dealloc {
+    NSLog(@"closing logger");
+    [logs release];
+    if(remoteUrl) [remoteUrl release];
+    if (self.crashLog == YES)[[NSFileManager defaultManager] removeItemAtURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] error:nil];
+    [super dealloc];
 }
 
 @end
