@@ -39,6 +39,8 @@
 // init a new logger object, URL must reply with just ticket ID
 -(AZLogger*)initWithURL:(NSURL*)url;
 
+-(void)removeLog;
+
 // log a string
 -(void)log:(NSString*)stringToLog;
 

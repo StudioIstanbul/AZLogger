@@ -137,8 +137,12 @@
     NSLog(@"closing logger");
     [logs release];
     if(remoteUrl) [remoteUrl release];
-    if (self.crashLog == YES)[[NSFileManager defaultManager] removeItemAtURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] error:nil];
+    [self removeLog];
     [super dealloc];
+}
+
+-(void)removeLog {
+    if (self.crashLog == YES)[[NSFileManager defaultManager] removeItemAtURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] error:nil];
 }
 
 @end
