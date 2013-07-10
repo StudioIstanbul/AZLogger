@@ -58,7 +58,10 @@
 }
 
 -(void)log:(NSString *)stringToLog {
-	[logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], stringToLog]];
+    NSArray* objectsToLog = [stringToLog componentsSeparatedByString:@"\n"];
+    for (NSString* obj in objectsToLog) {
+        [logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], obj]];
+    }
     [arrayViewController rearrangeObjects];
 	//[arrayViewController addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], stringToLog]];
     if (crashLog == YES) {
