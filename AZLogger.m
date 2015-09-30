@@ -7,14 +7,24 @@
 //
 
 #import "AZLogger.h"
-#import "UKSystemInfo.m"
+#import "UKSystemInfo.h"
 #import "ASIHTTPRequest/ASIHTTPRequest.h"
 #import "ASIHTTPRequest/ASIFormDataRequest.h"
 #import "NSFileManager+DirectoryLocations.h"
 
 @implementation AZLogger
 
-@synthesize crashLog;
+@synthesize crashLog, remoteUrl;
+
+static AZLogger* _azlogger;
+
++(AZLogger*)sharedLogger {
+    @synchronized([AZLogger class]) {
+        if (!_azlogger) _azlogger = [[self alloc] init];
+        return _azlogger;
+    }
+    return nil;
+}
 
 -(AZLogger*)init {
 	self = [super init];
@@ -63,7 +73,6 @@
         [logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], obj]];
     }
     [arrayViewController rearrangeObjects];
-	//[arrayViewController addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], stringToLog]];
     if (crashLog == YES) {
         [logs writeToURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] atomically:NO];
     }
@@ -87,14 +96,12 @@
         logContent = [logContent stringByAppendingString:[NSString stringWithFormat:@"%@::",elem]];
     }
     [request setPostValue:logContent forKey:@"logfile"];
-    //NSLog(@"%@", logContent);
     [request setPostValue:[eMailField stringValue] forKey:@"email"];
     [request setPostValue:[[NSBundle mainBundle] bundleIdentifier] forKey:@"product"];
     [request setPostValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"version"];
     [request setPostValue:UKSystemVersionString() forKey:@"osversion"];
     [request setRequestMethod:@"POST"];
     [request setUploadProgressDelegate:prog];
-    //[request setRequestFinishSelector:@selector(finishedUpload)];
     [request startAsynchronous];
 }
 -(void)requestFinished:(ASIHTTPRequest*) request {
@@ -103,12 +110,10 @@
     [statusPanel orderOut:self];
     NSString* trackingId = [request responseString];
     NSLog(@"tracking id %@", trackingId);
-    //[logs removeAllObjects];
     [idField setStringValue:trackingId];
     int statusCode = [request responseStatusCode];
     NSLog(@"server status %i", statusCode);
     [NSApp beginSheet:confirmPanel modalForWindow:azwindow modalDelegate:self didEndSelector:nil contextInfo:nil];
-    //[NSApp runModalForWindow:confirmPanel];
 }
 
 -(IBAction)closePanel:(id)sender {
@@ -137,7 +142,6 @@
 }
 
 -(void)dealloc {
-    NSLog(@"closing logger");
     [logs release];
     if(remoteUrl) [remoteUrl release];
     [self removeLog];

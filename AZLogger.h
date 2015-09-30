@@ -19,7 +19,6 @@
 
 @interface AZLogger : UKNibOwner {
 	NSMutableArray*		logs;
-	NSURL*              remoteUrl;
 	IBOutlet NSArrayController*	arrayViewController;
 	IBOutlet NSWindow* azwindow;
     IBOutlet NSPanel* statusPanel;
@@ -32,6 +31,9 @@
 
 // enable writing of logfile to disk for crashlogs, default NO
 @property (assign) BOOL crashLog;
+@property (nonatomic, strong) NSURL* remoteUrl;
+
++(AZLogger*)sharedLogger;
 
 // old init method, depreciated, use initWithURL instead!
 -(AZLogger*)init;
