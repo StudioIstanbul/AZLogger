@@ -14,7 +14,7 @@
 
 @implementation AZLogger
 
-@synthesize crashLog, remoteUrl;
+@synthesize crashLog, remoteUrl, outputToConsole;
 
 static AZLogger* _azlogger;
 
@@ -30,6 +30,11 @@ static AZLogger* _azlogger;
 	self = [super init];
 	[arrayViewController removeObjectAtArrangedObjectIndex:0];
     self.crashLog = NO;
+#ifdef DEBUG
+    outputToConsole = YES;
+#else
+    outputToConsole = NO;
+#endif
 #ifdef NON_APPSTORE
     //[systemInfo release];
 #endif
@@ -71,6 +76,9 @@ static AZLogger* _azlogger;
     NSArray* objectsToLog = [stringToLog componentsSeparatedByString:@"\n"];
     for (NSString* obj in objectsToLog) {
         [logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], obj]];
+    }
+    if (outputToConsole) {
+        NSLog(@"%@", stringToLog);
     }
     [arrayViewController rearrangeObjects];
     if (crashLog == YES) {

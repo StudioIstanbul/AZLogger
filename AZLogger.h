@@ -32,6 +32,7 @@
 // enable writing of logfile to disk for crashlogs, default NO
 @property (assign) BOOL crashLog;
 @property (nonatomic, strong) NSURL* remoteUrl;
+@property (assign) BOOL outputToConsole;
 
 +(AZLogger*)sharedLogger;
 
