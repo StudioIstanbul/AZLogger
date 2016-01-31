@@ -74,15 +74,17 @@ static AZLogger* _azlogger;
 
 -(void)log:(NSString *)stringToLog {
     NSArray* objectsToLog = [stringToLog componentsSeparatedByString:@"\n"];
-    for (NSString* obj in objectsToLog) {
-        [logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], obj]];
-    }
-    if (outputToConsole) {
-        NSLog(@"%@", stringToLog);
-    }
-    [arrayViewController rearrangeObjects];
-    if (crashLog == YES) {
-        [logs writeToURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] atomically:NO];
+    @synchronized(logs) {
+        for (NSString* obj in objectsToLog) {
+            [logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], obj]];
+        }
+        if (outputToConsole) {
+            NSLog(@"%@", stringToLog);
+        }
+        [arrayViewController rearrangeObjects];
+        if (crashLog == YES) {
+            [logs writeToURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] atomically:NO];
+        }
     }
 }
 
