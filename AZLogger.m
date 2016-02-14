@@ -11,6 +11,8 @@
 #import "ASIHTTPRequest/ASIHTTPRequest.h"
 #import "ASIHTTPRequest/ASIFormDataRequest.h"
 #import "NSFileManager+DirectoryLocations.h"
+#import "SISheetQueue.h"
+#import "NSAlert+BBlock.h"
 
 @implementation AZLogger
 
@@ -44,6 +46,7 @@ static AZLogger* _azlogger;
         [logs retain];
         [arrayViewController setContent:logs];
         [self.logWindow makeKeyAndOrderFront:self];
+        [NSApp runModalForWindow:self.logWindow];
     } else {
         logs = [[NSMutableArray alloc]init];
         [arrayViewController setContent:logs];
@@ -70,6 +73,7 @@ static AZLogger* _azlogger;
 
 -(IBAction)closeWindow:(id)sender {
     [azwindow orderOut:self];
+    [NSApp stopModal];
 }
 
 -(void)log:(NSString *)stringToLog {
@@ -160,6 +164,30 @@ static AZLogger* _azlogger;
 
 -(void)removeLog {
     if (self.crashLog == YES)[[NSFileManager defaultManager] removeItemAtURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] error:nil];
+}
+
+@end
+
+@implementation AZLoggerAlert
+
++(AZLoggerAlert*)alertWithError:(NSError *)error {
+    AZLoggerAlert* alert = (AZLoggerAlert*)[super alertWithError:error];
+    [[AZLogger sharedLogger] log:[NSString stringWithFormat:@"--[ERROR: %li]: %@", error.code, error.localizedDescription]];
+    return alert;
+}
+
+-(void)queueOnWindow:(NSWindow *)window {
+    [self addButtonWithTitle:NSLocalizedString(@"dismiss", @"dismiss AZLoggerAlert")];
+    [self addButtonWithTitle:NSLocalizedString(@"open support ticket", @"open support ticket AZLoggerAlert")];
+    [[SISheetQueue sharedQueue] queueSheet:self modalForWindow:window completionHandler:^(NSInteger returnCode) {
+        if (returnCode == NSAlertSecondButtonReturn) {
+            [[SISheetQueue sharedQueue] queueSheet:[[AZLogger sharedLogger] logWindow] modalForWindow:window completionHandler:nil];
+        }
+    }];
+}
+
+-(void)show {
+   [self queueOnWindow:nil];
 }
 
 @end

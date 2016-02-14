@@ -65,3 +65,9 @@
 -(IBAction)closeWindow:(id)sender;
 -(IBAction)closePanel:(id)sender;
 @end
+
+@interface AZLoggerAlert : NSAlert
++(AZLoggerAlert*)alertWithError:(NSError*)error;
+-(void)queueOnWindow:(NSWindow*)window;
+-(void)show;
+@end
