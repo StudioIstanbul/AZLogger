@@ -47,6 +47,9 @@
 // log a string
 -(void)log:(NSString*)stringToLog;
 
+// log a NSError
+-(void)logError:(NSError*)error;
+
 // output the whole log to system log
 -(void)printLogToNSLog;
 

@@ -76,6 +76,10 @@ static AZLogger* _azlogger;
     [NSApp stopModal];
 }
 
+-(void)logError:(NSError *)error {
+    [self log:[NSString stringWithFormat:@"ERROR %li: %@", error.code, error.localizedDescription]];
+}
+
 -(void)log:(NSString *)stringToLog {
     NSArray* objectsToLog = [stringToLog componentsSeparatedByString:@"\n"];
     @synchronized(logs) {
@@ -85,7 +89,7 @@ static AZLogger* _azlogger;
         if (outputToConsole) {
             NSLog(@"%@", stringToLog);
         }
-        [arrayViewController rearrangeObjects];
+        [arrayViewController performSelectorOnMainThread:@selector(rearrangeObjects) withObject:nil waitUntilDone:NO];
         if (crashLog == YES) {
             [logs writeToURL:[[NSURL fileURLWithPath:[[NSFileManager defaultManager] applicationSupportDirectory] isDirectory:YES] URLByAppendingPathComponent:@"logfile.data"] atomically:NO];
         }
