@@ -43,7 +43,6 @@ static AZLogger* _azlogger;
     if ([[NSFileManager defaultManager] fileExistsAtPath:[[[NSFileManager defaultManager] applicationSupportDirectory] stringByAppendingPathComponent:@"logfile.data"]] == YES) {
         NSLog(@"found crash log!");
         logs = [NSMutableArray arrayWithContentsOfFile:[[[NSFileManager defaultManager] applicationSupportDirectory] stringByAppendingPathComponent:@"logfile.data"]];
-        [logs retain];
         [arrayViewController setContent:logs];
         [self.logWindow makeKeyAndOrderFront:self];
         [NSApp runModalForWindow:self.logWindow];
@@ -61,14 +60,11 @@ static AZLogger* _azlogger;
 - (AZLogger*)initWithURL:(NSURL*)url {
     self = [self init];
     remoteUrl = url;
-    [remoteUrl retain];
     return self;
 }
 
 -(void)setURL:(NSURL*)url {
-    if (remoteUrl) [remoteUrl release];
     remoteUrl = url;
-    [remoteUrl retain];
 }
 
 -(IBAction)closeWindow:(id)sender {
@@ -160,10 +156,7 @@ static AZLogger* _azlogger;
 }
 
 -(void)dealloc {
-    [logs release];
-    if(remoteUrl) [remoteUrl release];
-    [self removeLog];
-    [super dealloc];
+    NSLog(@"logger deallocated");
 }
 
 -(void)removeLog {
