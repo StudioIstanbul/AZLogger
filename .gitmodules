@@ -1,3 +1,6 @@
 [submodule "HelperCategories"]
 	path = HelperCategories
 	url = git@github.com:azplanlos/HelperCategories.git
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = git@github.com:AFNetworking/AFNetworking.git
