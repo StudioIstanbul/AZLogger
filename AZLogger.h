@@ -45,7 +45,7 @@
 -(void)removeLog;
 
 // log a string
--(void)log:(NSString*)stringToLog;
+-(void)log:(NSString*)stringToLog, ...;
 
 // log a NSError
 -(void)logError:(NSError*)error;

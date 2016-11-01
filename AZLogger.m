@@ -80,14 +80,18 @@ static AZLogger* _azlogger;
     [self log:[NSString stringWithFormat:@"ERROR %li: %@", error.code, error.localizedDescription]];
 }
 
--(void)log:(NSString *)stringToLog {
-    NSArray* objectsToLog = [stringToLog componentsSeparatedByString:@"\n"];
+-(void)log:(NSString *)stringToLog, ... {
+    va_list args;
+    va_start(args, stringToLog);
+    NSString *newStringToLog = [[NSString alloc] initWithFormat:stringToLog arguments:args];
+    va_end(args);
+    NSArray* objectsToLog = [newStringToLog componentsSeparatedByString:@"\n"];
     @synchronized(logs) {
         for (NSString* obj in objectsToLog) {
             [logs addObject:[NSString stringWithFormat:@"%@: %@", [[NSDate date] description], obj]];
         }
         if (outputToConsole) {
-            NSLog(@"%@", stringToLog);
+            NSLog(@"%@", newStringToLog);
         }
         [arrayViewController performSelectorOnMainThread:@selector(rearrangeObjects) withObject:nil waitUntilDone:NO];
         if (crashLog == YES) {
