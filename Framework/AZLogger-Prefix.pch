@@ -1,0 +1,14 @@
+//
+//  AZLogger-Prefix.pch
+//  AZLogger
+//
+//  Created by Andreas Zöllner on 16.06.17.
+//  Copyright © 2017 Andreas Zöllner. All rights reserved.
+//
+
+#ifndef AZLogger_Prefix_h
+#define AZLogger_Prefix_h
+
+
+#endif /* AZLogger_Prefix_h */
+#import "NamespacedDependencies.h"

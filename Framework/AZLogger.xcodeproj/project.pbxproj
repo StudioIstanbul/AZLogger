@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A92BE13F1EF44DD800A3DFB9 /* AZLogger.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92BE12D1EF44DD800A3DFB9 /* AZLogger.xib */; };
+		A92BE1401EF44DD800A3DFB9 /* AZLogger.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92BE1301EF44DD800A3DFB9 /* AZLogger.xib */; };
+		A92BE1411EF44DD800A3DFB9 /* AZLogger.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92BE1331EF44DD800A3DFB9 /* AZLogger.xib */; };
+		A92BE1421EF44DD800A3DFB9 /* AZLogger.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92BE1361EF44DD800A3DFB9 /* AZLogger.xib */; };
+		A92BE1431EF44DD800A3DFB9 /* AZLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1381EF44DD800A3DFB9 /* AZLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A92BE1441EF44DD800A3DFB9 /* AZLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1391EF44DD800A3DFB9 /* AZLogger.m */; };
+		A92BE1461EF44DD800A3DFB9 /* UKNibOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE13B1EF44DD800A3DFB9 /* UKNibOwner.h */; };
+		A92BE1471EF44DD800A3DFB9 /* UKNibOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE13C1EF44DD800A3DFB9 /* UKNibOwner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A92BE1481EF44DD800A3DFB9 /* UKSystemInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE13D1EF44DD800A3DFB9 /* UKSystemInfo.h */; };
+		A92BE1491EF44DD800A3DFB9 /* UKSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE13E1EF44DD800A3DFB9 /* UKSystemInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A92BE1511EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE14F1EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.h */; };
+		A92BE1521EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1501EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.m */; };
+		A92BE1551EF44F6700A3DFB9 /* SISheetQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1531EF44F6700A3DFB9 /* SISheetQueue.h */; };
+		A92BE1561EF44F6700A3DFB9 /* SISheetQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1541EF44F6700A3DFB9 /* SISheetQueue.m */; };
+		A92BE1591EF44F8200A3DFB9 /* BBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1571EF44F8200A3DFB9 /* BBlock.h */; };
+		A92BE15A1EF44F8200A3DFB9 /* BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1581EF44F8200A3DFB9 /* BBlock.m */; };
+		A92BE15D1EF4500F00A3DFB9 /* NSApplication+BBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE15B1EF4500F00A3DFB9 /* NSApplication+BBlock.h */; };
+		A92BE15E1EF4500F00A3DFB9 /* NSApplication+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE15C1EF4500F00A3DFB9 /* NSApplication+BBlock.m */; };
+		A92BE1611EF4502100A3DFB9 /* NSTimer+BBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE15F1EF4502100A3DFB9 /* NSTimer+BBlock.h */; };
+		A92BE1621EF4502100A3DFB9 /* NSTimer+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1601EF4502100A3DFB9 /* NSTimer+BBlock.m */; };
+		A92BE1651EF4503300A3DFB9 /* NSAlert+BBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1631EF4503300A3DFB9 /* NSAlert+BBlock.h */; };
+		A92BE1661EF4503300A3DFB9 /* NSAlert+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1641EF4503300A3DFB9 /* NSAlert+BBlock.m */; };
+		A92BE17B1EF4505300A3DFB9 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1681EF4505300A3DFB9 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE17C1EF4505300A3DFB9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1691EF4505300A3DFB9 /* AFHTTPRequestOperation.m */; };
+		A92BE17D1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE16A1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE17E1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE16B1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.m */; };
+		A92BE17F1EF4505300A3DFB9 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE16C1EF4505300A3DFB9 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE1801EF4505300A3DFB9 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE16D1EF4505300A3DFB9 /* AFHTTPSessionManager.m */; };
+		A92BE1811EF4505300A3DFB9 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE16E1EF4505300A3DFB9 /* AFNetworking.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE1821EF4505300A3DFB9 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE16F1EF4505300A3DFB9 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE1831EF4505300A3DFB9 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1701EF4505300A3DFB9 /* AFNetworkReachabilityManager.m */; };
+		A92BE1841EF4505300A3DFB9 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1711EF4505300A3DFB9 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE1851EF4505300A3DFB9 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1721EF4505300A3DFB9 /* AFSecurityPolicy.m */; };
+		A92BE1861EF4505300A3DFB9 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1731EF4505300A3DFB9 /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE1871EF4505300A3DFB9 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1741EF4505300A3DFB9 /* AFURLConnectionOperation.m */; };
+		A92BE1881EF4505300A3DFB9 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1751EF4505300A3DFB9 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE1891EF4505300A3DFB9 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1761EF4505300A3DFB9 /* AFURLRequestSerialization.m */; };
+		A92BE18A1EF4505300A3DFB9 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1771EF4505300A3DFB9 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE18B1EF4505300A3DFB9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1781EF4505300A3DFB9 /* AFURLResponseSerialization.m */; };
+		A92BE18C1EF4505300A3DFB9 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1791EF4505300A3DFB9 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A92BE18D1EF4505300A3DFB9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE17A1EF4505300A3DFB9 /* AFURLSessionManager.m */; };
+		A92BE1901EF4507F00A3DFB9 /* NSDictionary+postParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE18E1EF4507F00A3DFB9 /* NSDictionary+postParameters.h */; };
+		A92BE1911EF4507F00A3DFB9 /* NSDictionary+postParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE18F1EF4507F00A3DFB9 /* NSDictionary+postParameters.m */; };
+		A92BE1981EF4565100A3DFB9 /* NSString+Encode.h in Headers */ = {isa = PBXBuildFile; fileRef = A92BE1961EF4565100A3DFB9 /* NSString+Encode.h */; };
+		A92BE1991EF4565100A3DFB9 /* NSString+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BE1971EF4565100A3DFB9 /* NSString+Encode.m */; };
+		A92BE19E1EF45D7400A3DFB9 /* AZLogger-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A92BE19D1EF45D7400A3DFB9 /* AZLogger-Prefix.pch */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A92BE11B1EF44DAC00A3DFB9 /* AZLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AZLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A92BE12C1EF44DD800A3DFB9 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = AZLogger.xib; sourceTree = "<group>"; };
+		A92BE12F1EF44DD800A3DFB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = AZLogger.xib; sourceTree = "<group>"; };
+		A92BE1321EF44DD800A3DFB9 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = AZLogger.xib; sourceTree = "<group>"; };
+		A92BE1351EF44DD800A3DFB9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = AZLogger.xib; sourceTree = "<group>"; };
+		A92BE1381EF44DD800A3DFB9 /* AZLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZLogger.h; sourceTree = "<group>"; };
+		A92BE1391EF44DD800A3DFB9 /* AZLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZLogger.m; sourceTree = "<group>"; };
+		A92BE13B1EF44DD800A3DFB9 /* UKNibOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKNibOwner.h; sourceTree = "<group>"; };
+		A92BE13C1EF44DD800A3DFB9 /* UKNibOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKNibOwner.m; sourceTree = "<group>"; };
+		A92BE13D1EF44DD800A3DFB9 /* UKSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKSystemInfo.h; sourceTree = "<group>"; };
+		A92BE13E1EF44DD800A3DFB9 /* UKSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKSystemInfo.m; sourceTree = "<group>"; };
+		A92BE14F1EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+DirectoryLocations.h"; path = "../HelperCategories/NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+		A92BE1501EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+DirectoryLocations.m"; path = "../HelperCategories/NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		A92BE1531EF44F6700A3DFB9 /* SISheetQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SISheetQueue.h; path = ../HelperCategories/SISheetQueue.h; sourceTree = "<group>"; };
+		A92BE1541EF44F6700A3DFB9 /* SISheetQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SISheetQueue.m; path = ../HelperCategories/SISheetQueue.m; sourceTree = "<group>"; };
+		A92BE1571EF44F8200A3DFB9 /* BBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBlock.h; path = ../HelperCategories/BBlock/BBlock.h; sourceTree = "<group>"; };
+		A92BE1581EF44F8200A3DFB9 /* BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBlock.m; path = ../HelperCategories/BBlock/BBlock.m; sourceTree = "<group>"; };
+		A92BE15B1EF4500F00A3DFB9 /* NSApplication+BBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSApplication+BBlock.h"; path = "../HelperCategories/BBlock/Categories/AppKit/NSApplication+BBlock.h"; sourceTree = "<group>"; };
+		A92BE15C1EF4500F00A3DFB9 /* NSApplication+BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSApplication+BBlock.m"; path = "../HelperCategories/BBlock/Categories/AppKit/NSApplication+BBlock.m"; sourceTree = "<group>"; };
+		A92BE15F1EF4502100A3DFB9 /* NSTimer+BBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTimer+BBlock.h"; path = "../HelperCategories/BBlock/Categories/Foundation/NSTimer+BBlock.h"; sourceTree = "<group>"; };
+		A92BE1601EF4502100A3DFB9 /* NSTimer+BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTimer+BBlock.m"; path = "../HelperCategories/BBlock/Categories/Foundation/NSTimer+BBlock.m"; sourceTree = "<group>"; };
+		A92BE1631EF4503300A3DFB9 /* NSAlert+BBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAlert+BBlock.h"; path = "../HelperCategories/BBlock/Categories/AppKit/NSAlert+BBlock.h"; sourceTree = "<group>"; };
+		A92BE1641EF4503300A3DFB9 /* NSAlert+BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAlert+BBlock.m"; path = "../HelperCategories/BBlock/Categories/AppKit/NSAlert+BBlock.m"; sourceTree = "<group>"; };
+		A92BE1681EF4505300A3DFB9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		A92BE1691EF4505300A3DFB9 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		A92BE16A1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		A92BE16B1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		A92BE16C1EF4505300A3DFB9 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		A92BE16D1EF4505300A3DFB9 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		A92BE16E1EF4505300A3DFB9 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		A92BE16F1EF4505300A3DFB9 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		A92BE1701EF4505300A3DFB9 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		A92BE1711EF4505300A3DFB9 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		A92BE1721EF4505300A3DFB9 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		A92BE1731EF4505300A3DFB9 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		A92BE1741EF4505300A3DFB9 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		A92BE1751EF4505300A3DFB9 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		A92BE1761EF4505300A3DFB9 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		A92BE1771EF4505300A3DFB9 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		A92BE1781EF4505300A3DFB9 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		A92BE1791EF4505300A3DFB9 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		A92BE17A1EF4505300A3DFB9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		A92BE18E1EF4507F00A3DFB9 /* NSDictionary+postParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+postParameters.h"; path = "../HelperCategories/NSDictionary+postParameters.h"; sourceTree = "<group>"; };
+		A92BE18F1EF4507F00A3DFB9 /* NSDictionary+postParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+postParameters.m"; path = "../HelperCategories/NSDictionary+postParameters.m"; sourceTree = "<group>"; };
+		A92BE1961EF4565100A3DFB9 /* NSString+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Encode.h"; path = "../HelperCategories/NSString+Encode.h"; sourceTree = "<group>"; };
+		A92BE1971EF4565100A3DFB9 /* NSString+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Encode.m"; path = "../HelperCategories/NSString+Encode.m"; sourceTree = "<group>"; };
+		A92BE19B1EF45D1A00A3DFB9 /* NamespacedDependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NamespacedDependencies.h; sourceTree = "<group>"; };
+		A92BE19D1EF45D7400A3DFB9 /* AZLogger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AZLogger-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A92BE1171EF44DAC00A3DFB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A92BE1111EF44DAC00A3DFB9 = {
+			isa = PBXGroup;
+			children = (
+				A92BE19D1EF45D7400A3DFB9 /* AZLogger-Prefix.pch */,
+				A92BE19B1EF45D1A00A3DFB9 /* NamespacedDependencies.h */,
+				A92BE1961EF4565100A3DFB9 /* NSString+Encode.h */,
+				A92BE1971EF4565100A3DFB9 /* NSString+Encode.m */,
+				A92BE18E1EF4507F00A3DFB9 /* NSDictionary+postParameters.h */,
+				A92BE18F1EF4507F00A3DFB9 /* NSDictionary+postParameters.m */,
+				A92BE1671EF4505300A3DFB9 /* AFNetworking */,
+				A92BE1631EF4503300A3DFB9 /* NSAlert+BBlock.h */,
+				A92BE1641EF4503300A3DFB9 /* NSAlert+BBlock.m */,
+				A92BE15F1EF4502100A3DFB9 /* NSTimer+BBlock.h */,
+				A92BE1601EF4502100A3DFB9 /* NSTimer+BBlock.m */,
+				A92BE15B1EF4500F00A3DFB9 /* NSApplication+BBlock.h */,
+				A92BE15C1EF4500F00A3DFB9 /* NSApplication+BBlock.m */,
+				A92BE1571EF44F8200A3DFB9 /* BBlock.h */,
+				A92BE1581EF44F8200A3DFB9 /* BBlock.m */,
+				A92BE1531EF44F6700A3DFB9 /* SISheetQueue.h */,
+				A92BE1541EF44F6700A3DFB9 /* SISheetQueue.m */,
+				A92BE14F1EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.h */,
+				A92BE1501EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.m */,
+				A92BE11D1EF44DAC00A3DFB9 /* AZLogger */,
+				A92BE11C1EF44DAC00A3DFB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A92BE11C1EF44DAC00A3DFB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE11B1EF44DAC00A3DFB9 /* AZLogger.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A92BE11D1EF44DAC00A3DFB9 /* AZLogger */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE12E1EF44DD800A3DFB9 /* de.lproj */,
+				A92BE1311EF44DD800A3DFB9 /* en.lproj */,
+				A92BE1341EF44DD800A3DFB9 /* English.lproj */,
+				A92BE1371EF44DD800A3DFB9 /* tr.lproj */,
+				A92BE1381EF44DD800A3DFB9 /* AZLogger.h */,
+				A92BE1391EF44DD800A3DFB9 /* AZLogger.m */,
+				A92BE13B1EF44DD800A3DFB9 /* UKNibOwner.h */,
+				A92BE13C1EF44DD800A3DFB9 /* UKNibOwner.m */,
+				A92BE13D1EF44DD800A3DFB9 /* UKSystemInfo.h */,
+				A92BE13E1EF44DD800A3DFB9 /* UKSystemInfo.m */,
+			);
+			name = AZLogger;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A92BE12E1EF44DD800A3DFB9 /* de.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE12D1EF44DD800A3DFB9 /* AZLogger.xib */,
+			);
+			path = de.lproj;
+			sourceTree = "<group>";
+		};
+		A92BE1311EF44DD800A3DFB9 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE1301EF44DD800A3DFB9 /* AZLogger.xib */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		A92BE1341EF44DD800A3DFB9 /* English.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE1331EF44DD800A3DFB9 /* AZLogger.xib */,
+			);
+			path = English.lproj;
+			sourceTree = "<group>";
+		};
+		A92BE1371EF44DD800A3DFB9 /* tr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE1361EF44DD800A3DFB9 /* AZLogger.xib */,
+			);
+			path = tr.lproj;
+			sourceTree = "<group>";
+		};
+		A92BE1671EF4505300A3DFB9 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				A92BE1681EF4505300A3DFB9 /* AFHTTPRequestOperation.h */,
+				A92BE1691EF4505300A3DFB9 /* AFHTTPRequestOperation.m */,
+				A92BE16A1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.h */,
+				A92BE16B1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.m */,
+				A92BE16C1EF4505300A3DFB9 /* AFHTTPSessionManager.h */,
+				A92BE16D1EF4505300A3DFB9 /* AFHTTPSessionManager.m */,
+				A92BE16E1EF4505300A3DFB9 /* AFNetworking.h */,
+				A92BE16F1EF4505300A3DFB9 /* AFNetworkReachabilityManager.h */,
+				A92BE1701EF4505300A3DFB9 /* AFNetworkReachabilityManager.m */,
+				A92BE1711EF4505300A3DFB9 /* AFSecurityPolicy.h */,
+				A92BE1721EF4505300A3DFB9 /* AFSecurityPolicy.m */,
+				A92BE1731EF4505300A3DFB9 /* AFURLConnectionOperation.h */,
+				A92BE1741EF4505300A3DFB9 /* AFURLConnectionOperation.m */,
+				A92BE1751EF4505300A3DFB9 /* AFURLRequestSerialization.h */,
+				A92BE1761EF4505300A3DFB9 /* AFURLRequestSerialization.m */,
+				A92BE1771EF4505300A3DFB9 /* AFURLResponseSerialization.h */,
+				A92BE1781EF4505300A3DFB9 /* AFURLResponseSerialization.m */,
+				A92BE1791EF4505300A3DFB9 /* AFURLSessionManager.h */,
+				A92BE17A1EF4505300A3DFB9 /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			path = ../AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A92BE1181EF44DAC00A3DFB9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92BE1431EF44DD800A3DFB9 /* AZLogger.h in Headers */,
+				A92BE1811EF4505300A3DFB9 /* AFNetworking.h in Headers */,
+				A92BE1881EF4505300A3DFB9 /* AFURLRequestSerialization.h in Headers */,
+				A92BE18C1EF4505300A3DFB9 /* AFURLSessionManager.h in Headers */,
+				A92BE17D1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.h in Headers */,
+				A92BE17F1EF4505300A3DFB9 /* AFHTTPSessionManager.h in Headers */,
+				A92BE1841EF4505300A3DFB9 /* AFSecurityPolicy.h in Headers */,
+				A92BE1821EF4505300A3DFB9 /* AFNetworkReachabilityManager.h in Headers */,
+				A92BE1861EF4505300A3DFB9 /* AFURLConnectionOperation.h in Headers */,
+				A92BE17B1EF4505300A3DFB9 /* AFHTTPRequestOperation.h in Headers */,
+				A92BE18A1EF4505300A3DFB9 /* AFURLResponseSerialization.h in Headers */,
+				A92BE1611EF4502100A3DFB9 /* NSTimer+BBlock.h in Headers */,
+				A92BE1511EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.h in Headers */,
+				A92BE1461EF44DD800A3DFB9 /* UKNibOwner.h in Headers */,
+				A92BE1651EF4503300A3DFB9 /* NSAlert+BBlock.h in Headers */,
+				A92BE15D1EF4500F00A3DFB9 /* NSApplication+BBlock.h in Headers */,
+				A92BE1551EF44F6700A3DFB9 /* SISheetQueue.h in Headers */,
+				A92BE19E1EF45D7400A3DFB9 /* AZLogger-Prefix.pch in Headers */,
+				A92BE1481EF44DD800A3DFB9 /* UKSystemInfo.h in Headers */,
+				A92BE1981EF4565100A3DFB9 /* NSString+Encode.h in Headers */,
+				A92BE1901EF4507F00A3DFB9 /* NSDictionary+postParameters.h in Headers */,
+				A92BE1591EF44F8200A3DFB9 /* BBlock.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A92BE11A1EF44DAC00A3DFB9 /* AZLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A92BE1231EF44DAC00A3DFB9 /* Build configuration list for PBXNativeTarget "AZLogger" */;
+			buildPhases = (
+				A92BE1161EF44DAC00A3DFB9 /* Sources */,
+				A92BE1171EF44DAC00A3DFB9 /* Frameworks */,
+				A92BE1181EF44DAC00A3DFB9 /* Headers */,
+				A92BE1191EF44DAC00A3DFB9 /* Resources */,
+				A92BE19A1EF45A3C00A3DFB9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AZLogger;
+			productName = AZLogger;
+			productReference = A92BE11B1EF44DAC00A3DFB9 /* AZLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A92BE1121EF44DAC00A3DFB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Andreas Zöllner";
+				TargetAttributes = {
+					A92BE11A1EF44DAC00A3DFB9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4W25LCK7PJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A92BE1151EF44DAC00A3DFB9 /* Build configuration list for PBXProject "AZLogger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A92BE1111EF44DAC00A3DFB9;
+			productRefGroup = A92BE11C1EF44DAC00A3DFB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A92BE11A1EF44DAC00A3DFB9 /* AZLogger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A92BE1191EF44DAC00A3DFB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92BE1421EF44DD800A3DFB9 /* AZLogger.xib in Resources */,
+				A92BE1401EF44DD800A3DFB9 /* AZLogger.xib in Resources */,
+				A92BE1411EF44DD800A3DFB9 /* AZLogger.xib in Resources */,
+				A92BE13F1EF44DD800A3DFB9 /* AZLogger.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A92BE19A1EF45A3C00A3DFB9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script is a modified version of this: https://github.com/jverkoey/nimbus/blob/master/scripts/generate_namespace_header\n\nheader=$SRCROOT/NamespacedDependencies.h\nprefix=\"AZL\"\npath=\"AZLogger\"\nskipPrefix=\"AZLogger\"\n\nif [ -f $header ]; then\necho \"File $FILE exists.\"\nexit 0\nelse\necho \"File $FILE does not exist.\"\nfi\n\necho \"Generating $header from $CODESIGNING_FOLDER_PATH...\"\n\necho \"// Namespaced Header\n\n#ifndef __NS_SYMBOL\n// We need to have multiple levels of macros here so that __NAMESPACE_PREFIX_ is\n// properly replaced by the time we concatenate the namespace prefix.\n#define __NS_REWRITE(ns, symbol) ns ## _rewrite_ ## symbol\n#define __NS_BRIDGE(ns, symbol) __NS_REWRITE(ns, symbol)\n#define __NS_SYMBOL(symbol) __NS_BRIDGE($prefix, symbol)\n#endif\n\n\" > $header\n\n# The following one-liner is a bit of a pain in the ass.\n# Breakdown:\n#\n# nm $CODESIGNING_FOLDER_PATH -j\n# Dump all of the symbols from the compiled library. This will include all UIKit\n# and Foundation symbols as well.\n#\n# | grep \"^_OBJC_CLASS_$_\"\n# Filter out the interfaces.\n#\n# | grep -v \"\\$_NS\"\n# Remove all Foundation classes.\n#\n# | grep -v \"\\$_UI\"\n# Remove all UIKit classes.\n#\n# | sed -e 's/_OBJC_CLASS_\\$_\\(.*\\)/#ifndef \\1\\'$'\\n''#define \\1 __NS_SYMBOL(\\1)\\'$'\\n''#endif/g'\n# I use the syntax outlined here:\n# http://stackoverflow.com/questions/6761796/bash-perl-or-sed-insert-on-new-line-after-found-phrase\n# to create newlines so that we can write the following on separate lines:\n#\n#  #ifndef ...\n#  #define ...\n#  #endif\n#\n\necho \"// Classes\" >> $header\n\nnm $CODESIGNING_FOLDER_PATH/$path -j | sort | uniq | grep \"_OBJC_CLASS_\\$_\" | grep -v \"\\$_AGSGT\" | grep -v \"\\$_CL\" | grep -v \"\\$_NS\" | grep -v \"\\$_UI\" | grep -v \"\\$_$skipPrefix\" | sed -e 's/_OBJC_CLASS_\\$_\\(.*\\)/#ifndef \\1\\'$'\\n''#define \\1 __NS_SYMBOL(\\1)\\'$'\\n''#endif\\'$'\\n''/g' >> $header\n\necho \"// Functions\" >> $header\n\nnm $CODESIGNING_FOLDER_PATH/$path | sort | uniq | grep \" T \" | cut -d' ' -f3 | grep -v \"\\$_NS\" | grep -v \"\\$_UI\" | grep -v \"\\$_$skipPrefix\" | sed -e 's/_\\(.*\\)/#ifndef \\1\\'$'\\n''#define \\1 __NS_SYMBOL(\\1)\\'$'\\n''#endif\\'$'\\n''/g' >> $header\n\necho \"// Externs\" >> $header\n\nnm $CODESIGNING_FOLDER_PATH/$path | sort | uniq | grep \" D \" | cut -d' ' -f3 | grep -v \"\\$_NS\" | grep -v \"\\$_UI\" | grep -v \"\\$_$skipPrefix\" | sed -e 's/_\\(.*\\)/#ifndef \\1\\'$'\\n''#define \\1 __NS_SYMBOL(\\1)\\'$'\\n''#endif\\'$'\\n''/g' >> $header\n\nnm $CODESIGNING_FOLDER_PATH/$path | sort | uniq | grep \" S \" | cut -d' ' -f3 | grep -v \"\\$_NS\" | grep -v \".eh\" | grep -v \"\\$_UI\" | grep -v \"OBJC_\" | grep -v \"\\$_$skipPrefix\" | sed -e 's/_\\(.*\\)/#ifndef \\1\\'$'\\n''#define \\1 __NS_SYMBOL(\\1)\\'$'\\n''#endif\\'$'\\n''/g' >> $header";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A92BE1161EF44DAC00A3DFB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92BE1911EF4507F00A3DFB9 /* NSDictionary+postParameters.m in Sources */,
+				A92BE1851EF4505300A3DFB9 /* AFSecurityPolicy.m in Sources */,
+				A92BE15A1EF44F8200A3DFB9 /* BBlock.m in Sources */,
+				A92BE1831EF4505300A3DFB9 /* AFNetworkReachabilityManager.m in Sources */,
+				A92BE1471EF44DD800A3DFB9 /* UKNibOwner.m in Sources */,
+				A92BE1871EF4505300A3DFB9 /* AFURLConnectionOperation.m in Sources */,
+				A92BE17C1EF4505300A3DFB9 /* AFHTTPRequestOperation.m in Sources */,
+				A92BE1801EF4505300A3DFB9 /* AFHTTPSessionManager.m in Sources */,
+				A92BE1891EF4505300A3DFB9 /* AFURLRequestSerialization.m in Sources */,
+				A92BE1991EF4565100A3DFB9 /* NSString+Encode.m in Sources */,
+				A92BE1521EF44F4C00A3DFB9 /* NSFileManager+DirectoryLocations.m in Sources */,
+				A92BE18D1EF4505300A3DFB9 /* AFURLSessionManager.m in Sources */,
+				A92BE15E1EF4500F00A3DFB9 /* NSApplication+BBlock.m in Sources */,
+				A92BE17E1EF4505300A3DFB9 /* AFHTTPRequestOperationManager.m in Sources */,
+				A92BE1561EF44F6700A3DFB9 /* SISheetQueue.m in Sources */,
+				A92BE18B1EF4505300A3DFB9 /* AFURLResponseSerialization.m in Sources */,
+				A92BE1621EF4502100A3DFB9 /* NSTimer+BBlock.m in Sources */,
+				A92BE1491EF44DD800A3DFB9 /* UKSystemInfo.m in Sources */,
+				A92BE1661EF4503300A3DFB9 /* NSAlert+BBlock.m in Sources */,
+				A92BE1441EF44DD800A3DFB9 /* AZLogger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A92BE12D1EF44DD800A3DFB9 /* AZLogger.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A92BE12C1EF44DD800A3DFB9 /* de */,
+			);
+			name = AZLogger.xib;
+			sourceTree = "<group>";
+		};
+		A92BE1301EF44DD800A3DFB9 /* AZLogger.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A92BE12F1EF44DD800A3DFB9 /* en */,
+			);
+			name = AZLogger.xib;
+			sourceTree = "<group>";
+		};
+		A92BE1331EF44DD800A3DFB9 /* AZLogger.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A92BE1321EF44DD800A3DFB9 /* English */,
+			);
+			name = AZLogger.xib;
+			sourceTree = "<group>";
+		};
+		A92BE1361EF44DD800A3DFB9 /* AZLogger.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A92BE1351EF44DD800A3DFB9 /* tr */,
+			);
+			name = AZLogger.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A92BE1211EF44DAC00A3DFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A92BE1221EF44DAC00A3DFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A92BE1241EF44DAC00A3DFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4W25LCK7PJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "AZLogger-Prefix.pch";
+				INFOPLIST_FILE = AZLogger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.studio-istanbul.AZLogger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A92BE1251EF44DAC00A3DFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4W25LCK7PJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "AZLogger-Prefix.pch";
+				INFOPLIST_FILE = AZLogger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.studio-istanbul.AZLogger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A92BE1151EF44DAC00A3DFB9 /* Build configuration list for PBXProject "AZLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A92BE1211EF44DAC00A3DFB9 /* Debug */,
+				A92BE1221EF44DAC00A3DFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A92BE1231EF44DAC00A3DFB9 /* Build configuration list for PBXNativeTarget "AZLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A92BE1241EF44DAC00A3DFB9 /* Debug */,
+				A92BE1251EF44DAC00A3DFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A92BE1121EF44DAC00A3DFB9 /* Project object */;
+}
